@@ -1,0 +1,208 @@
+/* custom properties */
+:root{
+    --Dark-Gray: hsl(0, 0%, 63%);
+    --Black: hsl(0, 0%, 0%);
+    --White: hsl(0, 0%, 100%);
+    --Very-Dark-Gray: hsl(0, 0%,27%);
+}
+
+/* diseño general */
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    font-size: 12px
+}
+
+/* Version mobile */
+.contenedor-general{
+    display: grid;
+    max-width: 1440px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, max-content);
+    grid-template-areas: 
+    "hero"
+    "shop"
+    "dark"
+    "about"
+    "light"
+    ;
+}
+
+nav{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+.contenedor-hero{
+    grid-area: hero;
+    background-image: url(../images/mobile-image-hero-1.jpg);
+    min-height: 250px;
+    /* height: 100%; */
+    background-size: cover;
+    background-position: center;
+    
+}
+
+#logo{
+    margin: 0 auto;
+
+}
+
+ul{
+    display: none;
+}
+
+.contenedor-flechas{
+    grid-area: hero;
+    align-self: end;
+    justify-self:end;
+    background-color: var(--Black);
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor-flechas img{
+    height: 40%;
+}
+
+.contenedor-shop{
+    grid-area: shop;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 60px 0;
+    
+}
+
+.contenedor-shop h2{
+    /* padding: 15px; */
+    color: var(--Black);
+    margin-top: auto;
+    margin-left: 1.3em;
+    margin-right: 2em;
+}
+.contenedor-shop p{
+    color: var(--Dark-Gray);
+    /* padding: 15px; */
+    line-height: 1.5;
+    margin: 2em 2em 2em;
+
+
+}
+.contenedor-shop a{
+    /* padding: 15px; */
+    margin-left: 2em;
+    /* margin-bottom: 3em; */
+    text-decoration: none;
+    color: var(--Black);
+    letter-spacing: 5px;
+}
+#flecha{
+    margin-left: 20px;
+}
+.contenedor-about-dark{
+    grid-area: dark;
+    min-height: 250px;
+    height: 100%;
+    background-image: url(../images/image-about-dark.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+.contenedor-about{
+    grid-area: about;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 60px 0;
+
+}
+
+.contenedor-about h3{
+    text-transform: uppercase;
+    color: var(--Black);
+    margin-left: 1em;
+    letter-spacing: 5px; 
+}
+
+.contenedor-about p{
+    color: var(--Dark-Gray);
+    /* padding: 15px; */
+    line-height: 1.5;
+    margin: 1em 1em 2em;
+}
+
+
+.contenedor-about-light{
+    grid-area: light;
+    min-height: 250px;
+    height: 100%;
+    background-image: url(../images/image-about-light.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+/* version desktop */
+@media(min-width:768px){
+    .contenedor-general{
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-areas: 
+        "hero hero hero hero shop shop shop"
+        "hero hero hero hero shop shop shop"
+        "hero hero hero hero shop shop shop"
+        "dark dark about about about light light"
+        "dark dark about about about light light"
+        ;
+
+    }
+
+    .contenedor-hero{
+        background-image: url(../images/desktop-image-hero-1.jpg);
+        min-height: 500px;
+    }
+
+    .contenedor-flechas{
+        grid-area: shop;
+        justify-self: start;
+    }
+
+    #logo{
+        margin: 0;
+    }
+
+    #hamburguesa{
+        display: none;
+    }
+
+    ul{
+        padding: 0;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1em;
+        margin-left: 10%;
+        list-style: none;
+
+    }
+
+    li a{
+        text-decoration: none;
+        color: var(--White);
+    }
+    .contenedor-shop h2{
+        margin-top: 5em;
+    }
+
+
+}
